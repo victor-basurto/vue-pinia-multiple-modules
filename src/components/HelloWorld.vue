@@ -1,14 +1,26 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useRootStore } from '@/store/useRootStore'
 
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
+
+const rootStore = useRootStore()
+const { version, getCurrentVersionMsg } =  storeToRefs(rootStore)
+const updateVersion = () => {
+	rootStore.setVersion('1.0.9')
+}
+
+
 
 const count = ref(0)
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
+  {{ version }}
+  {{ rootStore }}
+	<p>Root Store Version: {{ getCurrentVersionMsg }}</p>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -26,7 +38,7 @@ const count = ref(0)
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="count++">count is: {{ count }}</button>
+  <button type="button" @click="updateVersion">count is: {{ version }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
