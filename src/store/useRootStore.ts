@@ -1,16 +1,6 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
-export type DarkLightModeColor = 'DARK' | 'LIGHT';
-export interface IRootState {
-	version: string;
-	isMobile: boolean;
-	loading: boolean,
-	showCreateModal: boolean,
-	showEditModal: boolean,
-	showModal: boolean,
-	editModalById: null,
-	darkMode: boolean,
-	colorSchemeDark: DarkLightModeColor,
-};
+import { IRootState } from './modules/root-store/root-store.interface';
+
 export const state: IRootState = {
 	version: '1.0.0',
 	isMobile: false,

@@ -9,6 +9,16 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+	"baseUrl": ".",
+	"paths": {
+		"@/*": ["src/*"],
+		"@@types/*": ["src/@types/*"],
+		"@store/*": ["src/store/*"],
+		"@components/*": ["src/components/*"],
+		"@views/*": ["src/views/*"],
+		"@assets/*": ["src/assets/*"],
+		"@styles/*": ["src/assets/scss/*"],
+	},
     "lib": ["esnext", "dom"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

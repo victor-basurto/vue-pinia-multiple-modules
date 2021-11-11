@@ -12,6 +12,8 @@ export default defineConfig({
 			'@assets': path.resolve(__dirname, 'src/assets'),
 			'@views': path.resolve(__dirname, 'src/views'),
 			'@store': path.resolve(__dirname, 'src/store'),
+			'@types': path.resolve(__dirname, 'src/@types'),
+			'@styles': path.resolve(__dirname, 'src/assects/scss'),
 			// '@utils': path.resolve(__dirname, 'src/utils'),
 			// '@api': path.resolve(__dirname, 'src/api'),
 		},
