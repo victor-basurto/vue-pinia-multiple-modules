@@ -18,6 +18,7 @@
 		"@views/*": ["src/views/*"],
 		"@assets/*": ["src/assets/*"],
 		"@styles/*": ["src/assets/scss/*"],
+		"@routes/*": ["src/router/*"],
 	},
     "lib": ["esnext", "dom"]
   },
