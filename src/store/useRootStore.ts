@@ -1,6 +1,7 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
 import { IRootState } from './modules/root-store/root-store.interface';
 
+// Root State
 export const state: IRootState = {
 	version: '1.0.0',
 	isMobile: false,
@@ -63,6 +64,9 @@ export const useRootStore = defineStore('rootStore', {
 			});
 		},
 		setEditModalById(editModalById: null): void {
+			if (editModalById === null) {
+				return;
+			}
 			this.$patch((state: IRootState) => {
 				state.editModalById = editModalById;
 			});

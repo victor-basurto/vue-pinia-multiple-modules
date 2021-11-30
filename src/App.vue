@@ -2,10 +2,12 @@
 	// This starter template is using Vue 3 <script setup> SFCs
 	// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 	import HelloWorld from './components/HelloWorld.vue'
+	import TopNavbar from './components/base/nav/TopNavbar.vue'
 </script>
 
 <template>
-	<main class="bg-blue-500">
+	<main class="main">
+		<TopNavbar />
 		<nav class="box-border h-32 p-4">
 			<router-link to="/">Home</router-link>
 			<router-link to="/about">About</router-link>

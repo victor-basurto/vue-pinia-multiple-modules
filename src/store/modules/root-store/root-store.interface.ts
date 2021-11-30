@@ -1,4 +1,3 @@
-// import { DarkLightModeColor } from "../../../@types/global";
 import { DarkLightModeColor } from '@@types/global';
 export interface IRootState {
 	version: string;
