@@ -1,22 +1,45 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useRootStore } from '@/store/useRootStore'
+import { useRootStore } from '@store/useRootStore'
+import { useModalStore } from '@store/useModalStore'
+import Modal from '@components/base/modal/Modal.vue'
+import Form from '@components/base/form/Form.vue'
+
+type ModalInfoType = Record<'modalId' | 'modalInfo', string>
 
 defineProps<{ msg: string }>();
 
 const rootStore = useRootStore()
+const modalStore = useModalStore()
 const { version, getCurrentVersionMsg } =  storeToRefs(rootStore)
-const updateVersion = () => {
-	rootStore.setVersion('1.0.9')
+const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
+
+const updateVersion = () => version.value = '1.0.9';
+
+const closingModal = (o: ModalInfoType) => {
+	console.log('parent handler ', o.modalInfo)
+	editModalById.value = o.modalId
+	showModal.value = false
+}
+const openModal = () => {
+	showModal.value = true
 }
 
-
-
-const count = ref(0)
 </script>
 
 <template>
+	<button id="open-modal" @click="openModal">open modal</button>
+	<Modal modalId="generic-modal" headerInfo="header information" :showModal="showModal" @close="closingModal">
+		<template #header>
+			<div>
+				This is the template for the header
+			</div>
+		</template>
+		<template #body>
+			<Form />
+		</template>
+	</Modal>
   <h1>{{ msg }}</h1>
   {{ version }}
   {{ rootStore }}
@@ -60,5 +83,24 @@ code {
   padding: 2px 4px;
   border-radius: 4px;
   color: #304455;
+}
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 1s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+
 }
 </style>

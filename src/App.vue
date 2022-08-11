@@ -1,8 +1,25 @@
 <script setup lang="ts">
-	// This starter template is using Vue 3 <script setup> SFCs
-	// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-	import HelloWorld from './components/HelloWorld.vue'
-	import TopNavbar from './components/base/nav/TopNavbar.vue'
+import { onMounted, watch } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useRootStore } from './store/useRootStore'
+import { useIsMobile } from './composables/global'
+// This starter template is using Vue 3 <script setup> SFCs
+// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import HelloWorld from './components/HelloWorld.vue'
+import TopNavbar from './components/base/nav/TopNavbar.vue'
+
+const rootStore = useRootStore()
+const { isMobile } = storeToRefs(rootStore)
+const { setIsMobile } = rootStore
+const { check } = useIsMobile()
+
+
+
+onMounted(() => {
+	setIsMobile(check.value)
+	console.log('is Mobile?>', isMobile.value)
+})
+
 </script>
 
 <template>

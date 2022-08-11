@@ -1,3 +1,27 @@
+<script setup lang="ts">
+import "velocity-animate/velocity.ui.min.js";
+import { defineComponent, watch, ref, reactive, onMounted } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useRootStore } from '@store/useRootStore'
+import { useNavStore, type INavState } from '@store/useNavStore'
+import { useModalStore } from "@/store/useModalStore";
+
+const navStore = useNavStore()
+const rootStore = useRootStore()
+const modalStore = useModalStore()
+
+const { showModal } = storeToRefs(modalStore)
+const { isNavOpen } = storeToRefs(navStore)
+const { loading, isMobile } = storeToRefs(rootStore)
+
+const { setIsMobile } = rootStore
+
+
+
+
+
+
+</script>
 <template>
 	<nav class="flex items-center justify-between flex-wrap p-6 bg-gradient-to-r from-indigo-800 to-purple-800 shadow-lg">
 		<div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -14,36 +38,27 @@
 		</div>
 		<!-- submenu -->
 		<div class="submenu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-between" :class="isNavOpen ? 'active': 'inactive'">
-				<div class="text-sm">
-					<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/">Home</router-link>
-					<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/about">About</router-link>
-					<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/contact">Contact</router-link>
-				</div>
-				<div>
-					<!-- signup should take user to signup component -->
-					<!-- TODO:
-							When user is active - [show logout button, hide signup button]
-							When user is inactive - [show login button, show signup button]
-					-->
-					<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/signup">signup</router-link>
-					<!-- login should open modal -->
-					<button class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0">login</button>
-				</div>
+			<div class="text-sm">
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/">Home</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/about">About</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/contact">Contact</router-link>
+				<span class="text-white">{{ isMobile }}</span>
+			</div>
+			<div>
+				<!-- signup should take user to signup component -->
+				<!-- TODO:
+						When user is active - [show logout button, hide signup button]
+						When user is inactive - [show login button, show signup button]
+				-->
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/signup">signup</router-link>
+				<!-- login should open modal -->
+				<button @click="showModal = !showModal" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0">login</button>
+			</div>
 		</div><!-- end submenu -->
 	</nav><!-- end nav -->
 </template>
 
-<script setup lang="ts">
-import "velocity-animate/velocity.ui.min.js";
-import { defineComponent } from 'vue'
-import { storeToRefs } from 'pinia'
-import { INavState } from '@store/nav-store/nav-store.interface'
-import { useNavStore } from '@store/useNavStore'
 
-const navStore = useNavStore()
-const { isNavOpen } = storeToRefs(navStore)
-
-</script>
 <style lang="scss" scoped>
 @media (max-width: 1023px) {
 	nav {
