@@ -1,78 +1,43 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
-import { IRootState } from './modules/root-store/root-store.interface';
-
+import type { DarkLightModeColor } from '@@types/index';
+export interface IRootState {
+	version: string;
+	isMobile: boolean;
+	loading: boolean,
+	darkMode: boolean,
+	colorSchemeDark: DarkLightModeColor,
+};
+// Root State
 export const state: IRootState = {
 	version: '1.0.0',
 	isMobile: false,
 	loading: false,
-	showCreateModal: false,
-	showEditModal: false,
-	showModal: false,
-	editModalById: null,
 	darkMode: false,
 	colorSchemeDark: 'LIGHT',
 };
-
-export interface IGetters extends _GettersTree<IRootState> {
-	getCurrentVersionMsg: (state: IRootState) => string;
-};
-export interface IActions extends _ActionsTree {
-	setVersion(version: string): void;
-	setIsMobile(isMobile: boolean): void;
-	setLoading(loading: boolean): void;
-
-	// move to its own store
-	setShowCreateModal(showCreateModal: boolean): void;
-	setShowEditModal(showEditModal: boolean): void;
-	setShowModal(showModal: boolean): void;
-	setEditModalById(editModalById: null): void;
-
-	setDarkMode(darkMode: boolean): void;
-};
-
+/**
+ * Defined Navigation Store
+ * @date 12/7/2021 - 4:44:39 PM
+ *
+ * @type {id} - rootStore
+ * @type {options} - store options
+	* @type {state} - IRootState
+ */
 export const useRootStore = defineStore('rootStore', {
 	state: () => (state as IRootState),
 	getters: {
 		getCurrentVersionMsg: (state: IRootState) => `Current Version: ${state.version}`
-	} as IGetters,
+	},
 	actions: {
-		setVersion(version: string = state.version): void {
-			this.$patch((state: IRootState) => state.version = version);
-		},
 		setIsMobile(isMobile: boolean): void {
-			this.$patch((state: IRootState) => state.isMobile = isMobile);
+			this.isMobile = isMobile
 		},
 		setLoading(loading: boolean): void {
-			this.$patch((state: IRootState) => {
-				state.loading = loading;
-			});
-		},
-		setShowCreateModal(showCreateModal: boolean): void {
-			this.$patch((state: IRootState) => {
-				state.showCreateModal = showCreateModal;
-			});
-		},
-		setShowEditModal(showEditModal: boolean): void {
-			this.$patch((state: IRootState) => {
-				state.showEditModal = showEditModal;
-			});
-		},
-		setShowModal(showModal: boolean): void {
-			this.$patch((state: IRootState) => {
-				state.showModal = showModal;
-			});
-		},
-		setEditModalById(editModalById: null): void {
-			this.$patch((state: IRootState) => {
-				state.editModalById = editModalById;
-			});
+			this.loading = loading
 		},
 		setDarkMode(darkMode: boolean): void {
-			this.$patch((state: IRootState) => {
-				state.darkMode = darkMode;
-			});
-		},
-
-	} as IActions,
+			this.darkMode = darkMode
+		}
+	},
 })
 

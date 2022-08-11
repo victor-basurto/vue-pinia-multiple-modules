@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "pinia": "^2.0.2",
+    "velocity-animate": "^2.0.6",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
   },
