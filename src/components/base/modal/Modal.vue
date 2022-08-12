@@ -49,10 +49,10 @@ const login = (): boolean => true;
 				<transition name="modal-container">
 					<div v-show="showModal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
 						<div class="modal-content px-8 pt-8 pr-8 pl-8 pb-4">
-							<div class="modal-header">
+							<div class="modal-header text-center">
 								{{ headerInfo }}
 								<slot name="header">
-									default header
+									<div class="text-center">Contact US</div>
 								</slot>
 							</div>
 							<transition name="body-animate">

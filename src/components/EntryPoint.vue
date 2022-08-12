@@ -28,17 +28,26 @@ const openModal = () => showModal.value = true
 </script>
 
 <template>
-	<button id="open-modal" @click="openModal">open modal</button>
-	<Modal modalId="generic-modal" headerInfo="header information" :showModal="showModal" @close="closingModal">
-		<template #header>
-			<div>
-				This is the template for the header
-			</div>
-		</template>
-		<template #body>
-			<Form />
-		</template>
-	</Modal>
+	<div class="mb-8">
+		<button
+			class="px-4 py-2 bg-gradient-to-r text-white from-indigo-800 to-purple-800 shadow-lg rounded"
+			id="open-modal"
+			@click="openModal">
+				open modal
+			</button>
+		<Modal
+			modalId="generic-modal"
+			headerInfo="Strains Rating Form"
+			:showModal="showModal"
+			@close="closingModal">
+				<template #header>
+					<div class="text-center"><small>Contact US</small></div>
+				</template>
+				<template #body>
+					<Form />
+				</template>
+		</Modal>
+	</div>
 	<div>
 		{{ getCurrentVersionMsg }} <br>
 		<span>Is Mobile?: <strong>{{ (isMobile).toString().toUpperCase() }}</strong></span> <br>

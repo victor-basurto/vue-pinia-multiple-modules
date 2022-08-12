@@ -8,7 +8,7 @@ import TopNavbar from './components/base/nav/TopNavbar.vue'
 
 const rootStore = useRootStore()
 const { darkMode } = storeToRefs(rootStore)
-const { setIsMobile } = rootStore
+const { setIsMobile, setDarkMode } = rootStore
 const { check } = useIsMobile()
 
 
@@ -26,7 +26,10 @@ console.log(getMediaPreference())
 
 
 onMounted(() => {
+	const isDarkMode = (localStorage.getItem('dark-mode') === 'true') ? true : false;
+	console.log(isDarkMode)
 	setIsMobile(check.value)
+	setDarkMode(isDarkMode)
 })
 
 </script>
@@ -48,17 +51,24 @@ onMounted(() => {
 
 <style lang="scss">
 :root {
+	// static colors
+	--input-primary-color: #333;
+	// dynamic colors
 	--background-color-primary: #ebebeb;
 	--background-color-secondary: #fafafa;
 	--accent-color: #cacaca;
 	--text-primary-color: #222;
 	--element-size: 4rem;
+
+	--modal-background-color-primary: #fff;
 }
 .dark-theme {
 	--background-color-primary: #1e1e1e;
 	--background-color-secondary: #2d2d30;
 	--accent-color: #3f3f3f;
 	--text-primary-color: #ddd;
+
+	--modal-background-color-primary: #1e1e1e;
 }
 main {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -67,9 +77,8 @@ main {
 	text-align: center;
 	min-height: 100vh;
 	background-color: var(--background-color-primary);
-
-	:where(span, div, li, p, strong, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
-
+	:is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
+	:where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
 }
 @media (max-width: 767px) {
 	.container img { margin: auto; }

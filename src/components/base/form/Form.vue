@@ -17,24 +17,24 @@ const submit = () => {
 	<div>
 		<!-- create tailwindcss form using firstname, lastname, age -->
 		<form>
-			<div class="flex flex-col items-center my-4">
-				<label for="firstname" class="text-gray-600 text-sm">First Name</label>
+			<div class="flex flex-col my-4">
+				<label for="firstname" class="text-sm">First Name</label>
 				<input v-model="userState.firstName" id="firstname" class="border w-full p-2" type="text" placeholder="First Name">
 			</div>
-			<div class="flex flex-col items-center my-4">
-				<label for="lastname" class="text-gray-600 text-sm">Last Name</label>
+			<div class="flex flex-col my-4">
+				<label for="lastname" class="text-sm">Last Name</label>
 				<input v-model="userState.lastName" id="lastname" class="border w-full p-2" type="text" placeholder="Last Name">
 			</div>
-			<div class="flex flex-col items-center my-4">
-				<label for="age" class="text-gray-600 text-sm">Age</label>
+			<div class="flex flex-col my-4">
+				<label for="age" class="text-sm">Age</label>
 				<input v-model="userState.age" id="age" class="border w-full p-2" type="text" placeholder="Age">
 			</div>
 			<div class="flex justify-center my-4">
-				<button @click.prevent="submit" class="bg-blue-500 px-4 py-2 text-white rounded">Submit</button>
+				<button @click.prevent="submit" class="px-4 py-2 bg-gradient-to-r text-white from-indigo-800 to-purple-800 shadow-lg rounded">Submit</button>
 			</div>
 		</form>
 	</div>
 </template>
 <style scoped>
-
+input { color: var(--input-primary-color); }
 </style>

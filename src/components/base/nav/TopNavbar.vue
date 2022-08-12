@@ -17,6 +17,7 @@ const { setDarkMode } = rootStore
 // const emits = defineEmits(['dark'])
 const setDarkModeTheme = () => {
 	darkMode.value = !darkMode.value
+	localStorage.setItem('dark-mode', `${darkMode.value}`)
 	setDarkMode( darkMode.value )
 }
 
