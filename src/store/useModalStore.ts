@@ -31,24 +31,16 @@ export const useModalStore = defineStore('modalStore', {
 	} ,
 	actions: {
 		setShowCreateModal(showCreateModal: boolean): void {
-			this.$patch((state: IModalState): void => {
-				state.showCreateModal = showCreateModal;
-			});
+			this.showCreateModal = showCreateModal;
 		},
 		setShowEditModal(showEditModal: boolean): void {
-			this.$patch((state: IModalState): void => {
-				state.showEditModal = showEditModal;
-			});
+			this.showEditModal = showEditModal;
 		},
 		setShowModal(showModal: boolean): void {
-			this.$patch((state: IModalState): void => {
-				state.showModal = showModal;
-			});
+			this.showModal = showModal;
 		},
 		setEditModalById(editModalById: string): void {
-			this.$patch((state: IModalState): void => {
-				state.editModalById = editModalById;
-			});
+			this.editModalById = editModalById;
 		},
 
 	},

@@ -1,3 +1,47 @@
+<script setup lang="ts">
+import { computed, toRefs } from 'vue'
+import {  ModalInfoType } from '@/@types/interfaces/modal.interface'
+interface IModalProps {
+	modalId: string,
+	headerInfo: string,
+	showModal: boolean,
+}
+/**
+ * @description - Default properties
+ * @param {IModalProps} props
+ * @returns {IModalProps}
+ */
+const props = withDefaults(defineProps<IModalProps>(), {
+	modalId: 'login-modal',
+	headerInfo: 'none',
+	showModal: false,
+})
+const { modalId } = toRefs(props)
+/**
+ * @description - Defined emits
+ * @emits - ['close']
+ */
+const emits = defineEmits(['close'])
+/**
+ * @description - Modal Info, tells which modal was closed based on ID
+ * @returns {string} - modalId
+ */
+const modalInfo = computed(() => `closed - ${modalId.value}`)
+/**
+ * @description - Emits `close` event and passes computed `modalInfo`
+ */
+const close = () => emits('close', {
+	modalInfo: modalInfo.value,
+	modalId: modalId.value
+} as ModalInfoType)
+
+/**
+ * @description - Login button
+ * @returns {boolean}
+ */
+const login = (): boolean => true;
+
+</script>
 <template>
 	<transition name="modal">
 		<div class="modal-mask" :id="modalId" v-show="showModal">
@@ -29,54 +73,6 @@
 		</div>
 	</transition>
 </template>
-
-<script setup lang="ts">
-import { computed, toRefs } from 'vue'
-interface IModalProps {
-	modalId: string,
-	headerInfo: string,
-	showModal: boolean,
-}
-type ModalInfoType = Record<'modalId' | 'modalInfo', string>
-/**
- * @description - Default properties
- * @param {IModalProps} props
- * @returns {IModalProps}
- */
-const props = withDefaults(defineProps<IModalProps>(), {
-	modalId: 'login-modal',
-	headerInfo: 'none',
-	showModal: false,
-})
-const { modalId } = toRefs(props)
-/**
- * @description - Defined emits
- * @emits - ['close']
- */
-const emits = defineEmits(['close'])
-/**
- * @description - Modal Info, tells which modal was closed based on ID
- * @returns {string} - modalId
- */
-const modalInfo = computed(() => `closed - ${modalId.value}`)
-/**
- * @description - Emits `close` event and passes computed `modalInfo`
- */
-const close = () => emits('close', {
-	modalInfo: modalInfo.value,
-	modalId: modalId.value
-
-} as ModalInfoType)
-
-/**
- * @description - Login button
- * @returns {boolean}
- */
-const login = (): boolean => {
-	console.log(modalId.value)
-	return true
-}
-</script>
 
 <style lang="scss" scoped>
 .modal-mask {

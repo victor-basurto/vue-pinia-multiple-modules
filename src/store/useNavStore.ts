@@ -1,17 +1,5 @@
 import { defineStore, _GettersTree, _ActionsTree, _Method } from 'pinia';
-
-// Navigation State
-export interface INavState {
-	isNavOpen: boolean;
-	isSideNavOpen: boolean;
-}
-/**
- * Navigation Default State
- */
-export const navState: INavState = {
-	isNavOpen: false,
-	isSideNavOpen: false,
-};
+import { type INavState, navState } from '@/@types/interfaces/nav-interface';
 /**
  * Defined Navigation Store
  * @date 12/7/2021 - 4:44:39 PM
@@ -29,9 +17,7 @@ export const useNavStore = defineStore('navStore',{
 			 * @param state - INavState
 			 * sets isNavOpen to the opposite of its current value
 			 */
-			this.$patch((state: INavState): void =>  {
-				state.isNavOpen = !state.isNavOpen
-			});
+			this.isNavOpen = !this.isNavOpen
 		},
 	},
 });

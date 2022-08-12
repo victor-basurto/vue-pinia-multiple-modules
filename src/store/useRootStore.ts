@@ -1,20 +1,6 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
-import type { DarkLightModeColor } from '@@types/index';
-export interface IRootState {
-	version: string;
-	isMobile: boolean;
-	loading: boolean,
-	darkMode: boolean,
-	colorSchemeDark: DarkLightModeColor,
-};
-// Root State
-export const state: IRootState = {
-	version: '1.0.0',
-	isMobile: false,
-	loading: false,
-	darkMode: false,
-	colorSchemeDark: 'LIGHT',
-};
+import { type IRootState, state } from '@/@types/interfaces/root.interface';
+
 /**
  * Defined Navigation Store
  * @date 12/7/2021 - 4:44:39 PM
@@ -37,6 +23,9 @@ export const useRootStore = defineStore('rootStore', {
 		},
 		setDarkMode(darkMode: boolean): void {
 			this.darkMode = darkMode
+		},
+		setVersion(currentVersion: string): void {
+			this.version = currentVersion
 		}
 	},
 })

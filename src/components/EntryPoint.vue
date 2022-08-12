@@ -1,30 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRootStore } from '@store/useRootStore'
 import { useModalStore } from '@store/useModalStore'
+import type { ModalInfoType } from '@/@types/interfaces/modal.interface'
 import Modal from '@components/base/modal/Modal.vue'
 import Form from '@components/base/form/Form.vue'
 
-type ModalInfoType = Record<'modalId' | 'modalInfo', string>
+
 
 defineProps<{ msg: string }>();
 
 const rootStore = useRootStore()
 const modalStore = useModalStore()
-const { version, getCurrentVersionMsg } =  storeToRefs(rootStore)
+const { getCurrentVersionMsg, isMobile, loading, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
 
-const updateVersion = () => version.value = '1.0.9';
+const { setIsMobile } = rootStore;
 
 const closingModal = (o: ModalInfoType) => {
 	console.log('parent handler ', o.modalInfo)
 	editModalById.value = o.modalId
 	showModal.value = false
 }
-const openModal = () => {
-	showModal.value = true
-}
+
+const openModal = () => showModal.value = true
 
 </script>
 
@@ -40,10 +39,13 @@ const openModal = () => {
 			<Form />
 		</template>
 	</Modal>
-  <h1>{{ msg }}</h1>
-  {{ version }}
-  {{ rootStore }}
-	<p>Root Store Version: {{ getCurrentVersionMsg }}</p>
+	<div>
+		{{ getCurrentVersionMsg }} <br>
+		<span>Is Mobile?: <strong>{{ (isMobile).toString().toUpperCase() }}</strong></span> <br>
+		<span>Is Loading: {{ loading }}</span> <br>
+		<span>Is Dark Mode enabled?: {{ darkMode }}</span> <br>
+		<span>Current Color Scheme Type: {{ colorScheme }}</span>
+	</div>
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -61,7 +63,7 @@ const openModal = () => {
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
 
-  <button type="button" @click="updateVersion">count is: {{ version }}</button>
+  <button type="button" @click="setIsMobile(true)">is mobile</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
