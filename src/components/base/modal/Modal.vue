@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, toRefs } from 'vue'
 import {  ModalInfoType } from '@/@types/interfaces/modal.interface'
+
 interface IModalProps {
 	modalId: string,
 	headerInfo: string,
