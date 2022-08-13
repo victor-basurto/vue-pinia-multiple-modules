@@ -3,23 +3,15 @@ import "velocity-animate/velocity.ui.min.js";
 import { storeToRefs } from 'pinia'
 import { useNavStore } from '@/store/useNavStore'
 import { useModalStore } from "@/store/useModalStore";
-import { useRootStore } from "@/store/useRootStore";
+import { useDarkMode } from "@/composables/useDarkMode";
 
 const navStore = useNavStore()
-const rootStore = useRootStore()
 const modalStore = useModalStore()
 
 const { showModal } = storeToRefs( modalStore )
 const { isNavOpen } = storeToRefs( navStore )
-const { darkMode } = storeToRefs( rootStore )
-const { setDarkMode } = rootStore
-
-// const emits = defineEmits(['dark'])
-const setDarkModeTheme = () => {
-	darkMode.value = !darkMode.value
-	localStorage.setItem('dark-mode', `${darkMode.value}`)
-	setDarkMode( darkMode.value )
-}
+// composable
+const { isDarkMode, updateDarkmode } = useDarkMode()
 
 </script>
 <template>
@@ -39,21 +31,21 @@ const setDarkModeTheme = () => {
 		<!-- submenu -->
 		<div class="submenu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:justify-between" :class="isNavOpen ? 'active': 'inactive'">
 			<div class="text-sm">
-				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white sm:mr-4" to="/">Home</router-link>
-				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white sm:mr-4" to="/about">About</router-link>
-				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white sm:mr-4" to="/contact">Contact</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-4" to="/">Home</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-4" to="/about">About</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-4" to="/contact">Contact</router-link>
 			</div>
-			<div class="sm:flex sm:justify-center sm:items-center">
+			<div class="lg:flex lg:justify-center lg:items-center">
 				<!-- signup should take user to signup component -->
 				<!-- TODO:
 						When user is active - [show logout button, hide signup button]
 						When user is inactive - [show login button, show signup button]
 				-->
-				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white sm:mr-4" to="/signup">signup</router-link>
+				<router-link class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white lg:mr-4" to="/signup">signup</router-link>
 				<!-- login should open modal -->
 				<button @click="showModal = !showModal" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0">login</button>
-				<div class="sm:ml-4 switch text-white block mt-4 sm:mt-0" @click="setDarkModeTheme">Dark mode:
-					<span class="inner-switch">{{ darkMode ? 'ON' : 'OFF' }}</span>
+				<div class="lg:ml-4 switch text-white block mt-4 lg:mt-0" @click="updateDarkmode">Dark mode:
+					<span class="inner-switch">{{ isDarkMode ? 'ON' : 'OFF' }}</span>
 				</div>
 			</div>
 		</div><!-- end submenu -->

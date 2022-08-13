@@ -1,6 +1,5 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
 import { type IRootState, state } from '@/@types/interfaces/root.interface';
-
 /**
  * Defined Navigation Store
  * @date 12/7/2021 - 4:44:39 PM
@@ -16,17 +15,17 @@ export const useRootStore = defineStore('rootStore', {
 	},
 	actions: {
 		setIsMobile(isMobile: boolean): void {
-			this.isMobile = isMobile
+			this.isMobile = isMobile;
 		},
 		setLoading(loading: boolean): void {
-			this.loading = loading
+			this.loading = loading;
 		},
-		setDarkMode(darkMode: boolean): void {
-			this.darkMode = darkMode
+		toggleDarkMode(): void {
+			this.darkMode = !this.darkMode;
 		},
 		setVersion(currentVersion: string): void {
-			this.version = currentVersion
+			this.version = currentVersion;
 		}
 	},
-})
+});
 

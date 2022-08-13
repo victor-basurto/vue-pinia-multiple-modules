@@ -8,7 +8,7 @@ import TopNavbar from './components/base/nav/TopNavbar.vue'
 
 const rootStore = useRootStore()
 const { darkMode } = storeToRefs(rootStore)
-const { setIsMobile, setDarkMode } = rootStore
+const { setIsMobile, toggleDarkMode } = rootStore
 const { check } = useIsMobile()
 
 
@@ -26,22 +26,21 @@ console.log(getMediaPreference())
 
 
 onMounted(() => {
-	const isDarkMode = (localStorage.getItem('dark-mode') === 'true') ? true : false;
-	console.log(isDarkMode)
+	// const isDarkMode = (localStorage.getItem('dark-mode') === 'true') ?? false;
 	setIsMobile(check.value)
-	setDarkMode(isDarkMode)
+	// setDarkMode(isDarkMode)
 })
 
 </script>
 
 <template>
-	<main :class="{'dark-theme': darkMode}">
+	<main>
 		<TopNavbar />
 		<h1 class="box-border p-4">
 			Strains Reviewer
 		</h1>
 		<div class="container">
-			<img alt="Vue logo" src="./assets/logo.png" />
+			<!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
 			<EntryPoint msg="Hello Vue 3 + TypeScript + Vite" />
 
 		</div>
@@ -50,10 +49,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-:root {
+html {
 	// static colors
 	--input-primary-color: #333;
 	// dynamic colors
+	// light theme
 	--background-color-primary: #ebebeb;
 	--background-color-secondary: #fafafa;
 	--accent-color: #cacaca;
@@ -61,14 +61,22 @@ onMounted(() => {
 	--element-size: 4rem;
 
 	--modal-background-color-primary: #fff;
-}
-.dark-theme {
-	--background-color-primary: #1e1e1e;
-	--background-color-secondary: #2d2d30;
-	--accent-color: #3f3f3f;
-	--text-primary-color: #ddd;
+	background-color: var(--background-color-primary);
 
-	--modal-background-color-primary: #1e1e1e;
+
+	:is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
+	:where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
+}
+@media (prefers-color-scheme: dark) {
+	// dark theme
+	html[class="dark"] {
+		--background-color-primary: #1e1e1e;
+		--background-color-secondary: #2d2d30;
+		--accent-color: #3f3f3f;
+		--text-primary-color: #ddd;
+
+		--modal-background-color-primary: #1e1e1e;
+	}
 }
 main {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -76,9 +84,8 @@ main {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	min-height: 100vh;
-	background-color: var(--background-color-primary);
-	:is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
-	:where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
+
+
 }
 @media (max-width: 767px) {
 	.container img { margin: auto; }
