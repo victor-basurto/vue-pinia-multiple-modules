@@ -49,6 +49,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+
 html {
 	// static colors
 	--input-primary-color: #333;
@@ -67,16 +68,14 @@ html {
 	:is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
 	:where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
 }
-@media (prefers-color-scheme: dark) {
-	// dark theme
-	html[class="dark"] {
-		--background-color-primary: #1e1e1e;
-		--background-color-secondary: #2d2d30;
-		--accent-color: #3f3f3f;
-		--text-primary-color: #ddd;
+// dark theme
+html[class="dark"] {
+	--background-color-primary: #1e1e1e;
+	--background-color-secondary: #2d2d30;
+	--accent-color: #3f3f3f;
+	--text-primary-color: #ddd;
 
-		--modal-background-color-primary: #1e1e1e;
-	}
+	--modal-background-color-primary: #1e1e1e;
 }
 main {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
