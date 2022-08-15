@@ -59,5 +59,15 @@ export interface IStrainState {
 	currentStrain: IStrain;
 	index: number;
 	fetching: boolean;
-	dataError: Partial<Error> | null;
+	dataError: Partial<TypeError> | null;
+}
+
+export const state: IStrainState = {
+	strains: [] as IStrain[],
+	index: -1,
+	currentStrain: {} as IStrain,
+	fetching: false,
+	dataError: {
+		message: 'Bad Request'
+	}
 }

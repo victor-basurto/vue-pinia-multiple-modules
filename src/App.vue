@@ -2,7 +2,7 @@
 import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRootStore } from './store/useRootStore'
-import { useIsMobile } from './composables/global'
+import { useIsMobile } from './use/global'
 import EntryPoint from './components/EntryPoint.vue'
 import TopNavbar from './components/base/nav/TopNavbar.vue'
 

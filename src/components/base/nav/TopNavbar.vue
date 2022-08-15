@@ -3,7 +3,7 @@ import "velocity-animate/velocity.ui.min.js";
 import { storeToRefs } from 'pinia'
 import { useNavStore } from '@/store/useNavStore'
 import { useModalStore } from "@/store/useModalStore";
-import { useDarkMode } from "@/composables/useDarkMode";
+import { useDarkMode } from "@/use/useDarkMode";
 
 const navStore = useNavStore()
 const modalStore = useModalStore()

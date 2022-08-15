@@ -12,7 +12,7 @@ export function useDarkMode() {
 	 * @description: when page loads, it will check if darkmode is active
 	 * by checking localstorage then it will invoke `setLocalStorageDarkMode()`
 	 */
-	function checkIfDarkMode() {
+	const checkIfDarkMode = () => {
 		darkMode.value = (localStorage.getItem('dark-mode') === 'true') ?? false;
 		setLocaStorageDarkMode(darkMode.value);
 	}

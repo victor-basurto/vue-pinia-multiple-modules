@@ -1,15 +1,4 @@
-import type { IStrain } from '@/@types/interfaces/strain.interface';
-import type { ApiStatusType } from '../api';
-
-export const apiStatusType: ApiStatusType = {
-	IDLE: 'IDLE',
-	LOADING: 'LOADING',
-	SUCCESS: 'SUCCESS',
-	ERROR: 'ERROR'
+export interface IResponseData<T> {
+	data?: T[];
+	dataErrorStatus?: Partial<TypeError>
 }
-
-export default interface IResponseData {
-	data: IStrain[];
-	status: string
-}
-

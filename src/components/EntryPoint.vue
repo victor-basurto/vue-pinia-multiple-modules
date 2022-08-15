@@ -3,10 +3,9 @@ import { storeToRefs } from 'pinia'
 import { useRootStore } from '@store/useRootStore'
 import { useModalStore } from '@store/useModalStore'
 import type { ModalInfoType } from '@/@types/interfaces/modal.interface'
+import useStrains from '@/use/useStrains'
 import Modal from '@components/base/modal/Modal.vue'
 import Form from '@components/base/form/Form.vue'
-
-
 
 defineProps<{ msg: string }>();
 
@@ -14,6 +13,7 @@ const rootStore = useRootStore()
 const modalStore = useModalStore()
 const { getCurrentVersionMsg, isMobile, loading, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
+const { strainState } = useStrains()
 
 const { setIsMobile } = rootStore;
 
@@ -29,6 +29,7 @@ const openModal = () => showModal.value = true
 
 <template>
 	<div class="mb-8">
+	{{ strainState }}
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
 			<div
 				class="max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 bg-white dark:border-gray-700">
