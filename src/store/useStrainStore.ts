@@ -1,6 +1,9 @@
 import { defineStore, _GettersTree, _ActionsTree } from 'pinia';
 import { type IStrain, type IStrainState, state } from '@/@types/interfaces/strain.interface';
 import type { StoreReturnType, StringNumber } from '@/@types/index';
+import { IResponseData } from '@/@types/interfaces/response.interface';
+import { fetchStrains } from '@/services/api';
+import { useLoadingStore } from './useLoadingStore';
 /**
  * @type {id} - strainStore
  * @type {options} - store options
@@ -31,7 +34,23 @@ export const useStrainStore = defineStore('strainStore', {
 		allStrainsTotal: (state: IStrainState): number => state.strains.length,
 	},
 	actions: {
-		// async
+		async getStrains() {
+			const loadingStore = useLoadingStore()
+			const { setLoading } = loadingStore;
+
+			setLoading(true)
+			try {
+				const response: IResponseData<IStrain> = await fetchStrains()
+				this.strains = response.data as IStrain[]
+
+			} catch(e) {
+				const typeError = e as TypeError;
+				this.dataError!.message = typeError.message;
+			} finally {
+				setLoading(false)
+			}
+
+		}
 	},
 });
 

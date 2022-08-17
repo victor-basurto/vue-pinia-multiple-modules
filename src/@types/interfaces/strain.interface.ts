@@ -19,7 +19,10 @@ export interface IStrain {
 	/**
 	 * some description
 	 */
-	description: string;
+	description: {
+		excerpt: string,
+		fullDescription: string
+	};
 	/**
 	 * 40.0
 	 */
@@ -52,6 +55,14 @@ export interface IStrain {
 	 * 10
 	 */
 	rating: number;
+	/**
+	 * true/false - indicates wether has CBD or not
+	 */
+	hasCBD: boolean;
+	/**
+	 * 1%
+	 */
+	CBDLevel: string;
 }
 
 export interface IStrainState {

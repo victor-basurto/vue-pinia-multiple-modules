@@ -1,83 +1,111 @@
 [{
 	"id": 1,
-	"brand": "Rianon",
-	"name": "Mathouse",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
-	"price": "12.22",
-	"strainWeight": "1g",
+	"brand": "Pacific Stone",
+	"name": "Wedding Cake Indica",
+	"description": {
+		"excerpt": "Papaya Punch is a cultivar of unknown origins thought to be a combination of Papaya and Purple Punch.",
+		"fullDescription": "Papaya Punch is a cultivar of unknown origins thought to be a combination of Papaya and Purple Punch. The top reported aromas of Papaya Punch are fruit candy and fresh berries. It is said to taste of berries with a hint of cheese."
+	},
+	"price": "46",
+	"strainWeight": "14g",
 	"strainType": "Hybrid",
-	"thcLevel": "24%",
-	"strainEffects": ["euphoria", "arouse", "focus"],
-	"strainFlavors": ["cherry", "dirt", "strawberry"],
-	"rollType": "Infuse",
+	"thcLevel": "25.87%",
+	"strainEffects": ["Relaxed", "Happy", "Uplifted"],
+	"strainFlavors": ["Sweet", "Flowery", "Earthy"],
+	"rollType": "Flower",
 	"rating": 10,
-	"image": "https://picsum.photos/200/300"
+	"hasCBD": false,
+	"cbdLevel": "",
+	"image": "https://images.weedmaps.com/products/000/105/320/avatar/original/1642458251-1642204126-indica-wdc-35g.jpg?fit=fill&fill=solid&fill-color=ffffff&h=400&w=400&auto=format"
 },
 {
 	"id": 2,
-	"brand": "Carlynne",
-	"name": "Raymont",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
-	"price": "12.22",
-	"strainWeight": "2.5g",
+	"brand": "Smallz",
+	"name": "West Coast Treez - Cereal Milk",
+	"description": {
+		"excerpt": "Cereal Milk is a balanced sativa",
+		"fullDescription": "Cereal Milk is a balanced sativa-indica hybrid strain from the Cookies Fam. The top reported aromas are reminiscent of the fruity milk leftover after a bowl of sugary cereal, and the top reported flavors are creamy berry and fruity citrus."
+	},
+	"price": "25",
+	"strainWeight": "3.5g",
 	"strainType": "Hybrid",
-	"thcLevel": "24%",
-	"strainEffects": ["euphoria", "arouse", "focus"],
-	"strainFlavors": ["cherry", "dirt", "strawberry"],
-	"rollType": "Infuse",
-	"rating": 10,
-	"image": "https://picsum.photos/200"
+	"thcLevel": "27.7%",
+	"strainEffects": ["Relaxed", "Happy", "Giggly"],
+	"strainFlavors": ["Sweet", "Vanilla", "Berry"],
+	"rollType": "Flower",
+	"rating": 8,
+	"hasCBD": true,
+	"cbdLevel": "1%",
+	"image": "https://images.weedmaps.com/products/000/105/320/avatar/original/1642458251-1642204126-indica-wdc-35g.jpg?fit=fill&fill=solid&fill-color=ffffff&h=400&w=400&auto=format"
 },
 {
 	"id": 3,
-	"brand": "Brandea",
-	"name": "McAloren",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
-	"price": "12.22",
-	"strainWeight": "2g",
-	"strainType": "Indica",
-	"thcLevel": "30%",
-	"strainEffects": ["euphoria", "arouse", "focus"],
-	"strainFlavors": ["cherry", "dirt", "strawberry"],
-	"rollType": "Infuse",
-	"rating": 10,
-	"image": "https://picsum.photos/id/237/200/300"
+	"brand": "Knight's Templar OG Indoor",
+	"name": "La Poste - 1/8.oz",
+	"description": {
+		"excerpt": "This knight's armor doesn",
+		"fullDescription": "This knight's armor doesn't fit anymore, had to switch categories. 1/8.oz with 37.74% (THC) body fat. Face him if you dare."
+	},
+	"price": "45",
+	"strainWeight": "1/8oz",
+	"strainType": "Sativa",
+	"thcLevel": "37.74%",
+	"strainEffects": ["Relaxed", "Creative", "Happy"],
+	"strainFlavors": ["Earthy", "Chemical", "Citrus"],
+	"rollType": "Flower",
+	"rating": 8,
+	"hasCBD": true,
+	"cbdLevel": "1%",
+	"image": "https://media1.fdncms.com/inlander/imager/u/original/20805127/greenzone1-1-2a583dd676d4bb30.jpg"
 },
 {
 	"id": 4,
-	"brand": "Zeke",
-	"name": "Woolpert",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
-	"price": "12.22",
-	"strainWeight": "1.2g",
-	"strainType": "Sativa",
-	"thcLevel": "42%",
-	"strainEffects": ["euphoria", "arouse", "focus"],
-	"strainFlavors": ["cherry", "dirt", "strawberry"],
-	"rollType": "Infuse",
-	"rating": 10,
-	"image": "https://picsum.photos/seed/picsum/200/300"
+	"brand": "Blue Zkittlez",
+	"name": "Baby Jeeter Infused",
+	"description": {
+		"excerpt": "Blue Zkittlez Baby Jeeter Infused - Five .5g",
+		"fullDescription": "Blue Zkittlez Baby Jeeter Infused - Five .5g Joints 2.5g | Indica | 43.32% THC Indoor Grown Infused with Distillate Oil & Kief Blue Zkittlez is an indica cross of Blue Diamond and Zkittlez. This odoriferous flower offers a terpene profile of tart citrus, sweet earth, and wildflowers. The physical effects of this strain are mellow and moderately sedating, igniting appetite while weighing on the limbs. Its strong physical effects and uplifting mental high make it a perfect end-of-the-day strain and a nice match for folks contending with stress, restlessness, and pain."
+	},
+	"price": "36",
+	"strainWeight": "2.5g",
+	"strainType": "Hybrid, Indica-Dominant",
+	"thcLevel": "37.74%",
+	"strainEffects": ["Relaxed", "Happy", "Sleepy"],
+	"strainFlavors": ["Sweet", "Blueberry", "Berry"],
+	"rollType": "Pre-Roll",
+	"rating": 7,
+	"hasCBD": false,
+	"cbdLevel": "",
+	"image": "https://images.weedmaps.com/photos/products/000/175/621/original/904457_Baby-Blue-Zkittlez.jpg?fit=fill&fill=solid&fill-color=ffffff&h=768&w=768&auto=format"
 },
 {
 	"id": 5,
-	"brand": "Yard",
-	"name": "Letcher",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
-	"price": "12.22",
+	"brand": "Infused Preroll",
+	"name": "528 | Moon Rocket | Green Crack",
+	"description": {
+		"excerpt": "Join us on a Journey to",
+		"fullDescription": "Join us on a Journey to the Moon with this Brand-New, Infused Preroll that's sure to knock you off this Planet and Crash Land you on the Moon. Produced by the team at 528hz, this Preroll is Infused to the Core using a Proprietary Blend of Indoor Flower, Cannabis Oil and Terpenes that perfectly compliments each other, giving you a High and Taste that'll leave you Craving for More. To give it an extra Boost we've Painted it in Oil and Covered it in Blonde Kief, adding to the Aesthetic and assuring you that this Preroll Lifts you Out-of-this-World. So hop on this Rocket and bring your Friends along for the ride! Green Crack: The perfect sativa for those looking to get the boost they need to power through the day and conquer the world. Fresh floral notes, with a touch of earthy goodness and a tinge of mango and fruits to round it off."
+	},
+	"price": "16",
 	"strainWeight": "1.2g",
-	"strainType": "Indica",
+	"strainType": "Sativa",
 	"thcLevel": "28%",
-	"strainEffects": ["euphoria", "arouse", "focus"],
-	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"strainEffects": ["Energetic", "Happy", "Uplifted"],
+	"strainFlavors": ["Skunk", "Citrus", "Mango"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"image": "https://picsum.photos/200/300?grayscale"
+	"hasCBD": true,
+	"cbdLevel": "1.2%",
+	"image": "https://images.weedmaps.com/products/000/399/724/avatar/original/1657861394-green_crack.jpg?fit=fill&fill=solid&fill-color=ffffff&h=768&w=768&auto=format"
 },
 {
 	"id": 6,
 	"brand": "Risa",
 	"name": "Tattersdill",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "1.2g",
 	"strainType": "Hybrid",
@@ -92,7 +120,10 @@
 	"id": 7,
 	"brand": "Lorrayne",
 	"name": "Rollason",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "1.2g",
 	"strainType": "Indica",
@@ -107,7 +138,10 @@
 	"id": 8,
 	"brand": "Edith",
 	"name": "Lettsom",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "1g",
 	"strainType": "Sativa",
@@ -122,7 +156,10 @@
 	"id": 9,
 	"brand": "Ddene",
 	"name": "Conring",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "2g",
 	"strainType": "Indica",
@@ -137,7 +174,10 @@
 	"id": 10,
 	"brand": "Clemens",
 	"name": "Jay",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "1g",
 	"strainType": "Hybrid",
@@ -152,7 +192,10 @@
 	"id": 11,
 	"brand": "Lemuel",
 	"name": "Botwood",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "28g",
 	"strainType": "Hybrid",
@@ -167,7 +210,10 @@
 	"id": 12,
 	"brand": "Dionne",
 	"name": "Larder",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "28g",
 	"strainType": "Sativa",
@@ -182,7 +228,10 @@
 	"id": 13,
 	"brand": "Kerr",
 	"name": "Hambidge",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "1g",
 	"strainType": "Indica",
@@ -197,7 +246,10 @@
 	"id": 14,
 	"brand": "Daisie",
 	"name": "Roizin",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "14g",
 	"strainType": "Indica",
@@ -212,7 +264,10 @@
 	"id": 15,
 	"brand": "Dane",
 	"name": "Roscow",
-	"description": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
 	"price": "12.22",
 	"strainWeight": "14g",
 	"strainType": "Sativa",

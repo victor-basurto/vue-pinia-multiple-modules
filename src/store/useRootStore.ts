@@ -11,14 +11,11 @@ import { type IRootState, state } from '@/@types/interfaces/root.interface';
 export const useRootStore = defineStore('rootStore', {
 	state: () => (state as IRootState),
 	getters: {
-		getCurrentVersionMsg: (state: IRootState) => `Current Version: ${state.version}`
+		getCurrentVersionMsg: (state: IRootState) => `Current Version: ${state.version}`,
 	},
 	actions: {
 		setIsMobile(isMobile: boolean): void {
 			this.isMobile = isMobile;
-		},
-		setLoading(loading: boolean): void {
-			this.loading = loading;
 		},
 		toggleDarkMode(): void {
 			this.darkMode = !this.darkMode;
