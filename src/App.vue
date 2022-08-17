@@ -7,8 +7,7 @@ import EntryPoint from './components/EntryPoint.vue'
 import TopNavbar from './components/base/nav/TopNavbar.vue'
 
 const rootStore = useRootStore()
-const { darkMode } = storeToRefs(rootStore)
-const { setIsMobile, toggleDarkMode } = rootStore
+const { setIsMobile } = rootStore
 const { check } = useIsMobile()
 
 
@@ -65,8 +64,8 @@ html {
 	background-color: var(--background-color-primary);
 
 
-	:is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
-	:where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
+	// :is(.modal-container, .modal-footer) { background-color: var(--modal-background-color-primary) !important; }
+	// :where(span, div, li, p, strong, label, h1, h2, h3, h4, h5, h6):not(nav *) { color: var(--text-primary-color); }
 }
 // dark theme
 html[class="dark"] {

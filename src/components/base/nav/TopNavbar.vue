@@ -11,7 +11,7 @@ const modalStore = useModalStore()
 const { showModal } = storeToRefs( modalStore )
 const { isNavOpen } = storeToRefs( navStore )
 // composable
-const { isDarkMode, updateDarkmode } = useDarkMode()
+const { darkMode, updateDarkmode } = useDarkMode()
 
 </script>
 <template>
@@ -45,7 +45,7 @@ const { isDarkMode, updateDarkmode } = useDarkMode()
 				<!-- login should open modal -->
 				<button @click="showModal = !showModal" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-purple-800 hover:bg-white mt-4 lg:mt-0">login</button>
 				<div class="lg:ml-4 switch text-white block mt-4 lg:mt-0" @click="updateDarkmode">Dark mode:
-					<span class="inner-switch">{{ isDarkMode ? 'ON' : 'OFF' }}</span>
+					<span class="inner-switch">{{ darkMode ? 'ON' : 'OFF' }}</span>
 				</div>
 			</div>
 		</div><!-- end submenu -->

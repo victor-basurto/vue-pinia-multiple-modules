@@ -15,7 +15,7 @@ const rootStore = useRootStore()
 const modalStore = useModalStore()
 const strainStore = useStrainStore()
 const loadingStore = useLoadingStore()
-const { getCurrentVersionMsg, isMobile, darkMode, colorScheme } =  storeToRefs(rootStore)
+const { getCurrentVersionMsg, isMobile, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
 const { strains } = storeToRefs(strainStore)
 const { getStrains } = strainStore
@@ -82,7 +82,6 @@ onMounted(async () => {
 		{{ getCurrentVersionMsg }} <br>
 		<span>Is Mobile?: <strong>{{ (isMobile).toString().toUpperCase() }}</strong></span> <br>
 		<span>Is Loading: {{ isLoading }}</span> <br>
-		<span>Is Dark Mode enabled?: {{ darkMode }}</span> <br>
 		<span>Current Color Scheme Type: {{ colorScheme }}</span>
 	</div>
 	<p>
@@ -134,14 +133,14 @@ code {
  * these styles.
  */
 
-.modal-enter-active,
+/* .modal-enter-active,
 .modal-leave-active {
   transition: opacity 1s ease;
-}
+} */
 
-.modal-enter-from,
+/* .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
 
-}
+} */
 </style>

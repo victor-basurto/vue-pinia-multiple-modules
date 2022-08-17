@@ -1,4 +1,4 @@
-import { defineStore, _GettersTree, _ActionsTree, Pinia, _Method } from 'pinia';
+import { defineStore } from 'pinia';
 
 export interface IModalState {
 	modalInfo: string,

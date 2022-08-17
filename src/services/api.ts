@@ -13,15 +13,13 @@ const strains: IResponseData<IStrain> = {
 /**
  * @description Mock API for fetching Strains
  * @date 08/15/2022
- *
- * @param {T[]} data
+ * @param {T[]} payload
  * @returns {Promise<Strains>} Promise\<Strains\>
- * @example
- * import { fetchStrains } from '@/services/mocked/index.ts';
- * import { apiStatusType } from './../@types/interfaces/response.interface';
-fetchStrains().then(res => {
- *  	console.log(res);
- *  });
+ * @example import { fetchStrains } from '@/services/mocked/index.ts';
+ *	import { apiStatusType } from './../@types/interfaces/response.interface';
+ *	fetchStrains().then(res => {
+ *		console.log(res);
+ *	});
  */
 const fetch = <T>(payload: IResponseData<T>): Promise<IResponseData<T>> => {
 	return new Promise((resolve, reject) => {

@@ -1,13 +1,13 @@
 import { ref, onMounted } from 'vue';
-import { useRootStore } from '@/store/useRootStore';
 import { storeToRefs } from 'pinia';
+import { useDarkModeStore } from '@/store/useDarkModeStore';
 export function useDarkMode() {
-	const rootStore = useRootStore();
-	const { darkMode } = storeToRefs(rootStore)
-	const { toggleDarkMode } = rootStore;
+	const darkModeStore = useDarkModeStore()
+	const { isDarkMode } = storeToRefs(darkModeStore)
+	const { toggleDarkMode } = darkModeStore;
 
 	// current darkmode state
-	const isDarkMode = darkMode;
+	const darkMode = isDarkMode;
 	/**
 	 * @description: when page loads, it will check if darkmode is active
 	 * by checking localstorage then it will invoke `setLocalStorageDarkMode()`
@@ -31,7 +31,6 @@ export function useDarkMode() {
 	 * @returns void
 	 */
 	function setLocaStorageDarkMode(isDark: boolean): void {
-		console.log('isDarkmode: ',isDark)
 		localStorage.setItem('dark-mode', isDark.toString());
 		if ( isDark ) {
 			document.documentElement.classList.add( 'dark');
@@ -40,5 +39,5 @@ export function useDarkMode() {
 		document.documentElement.classList.remove('dark');
 	}
 	onMounted(() => checkIfDarkMode())
-	return { isDarkMode, updateDarkmode };
+	return { darkMode, updateDarkmode };
 }

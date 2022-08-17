@@ -62,7 +62,7 @@ export interface IStrain {
 	/**
 	 * 1%
 	 */
-	CBDLevel: string;
+	cbdLevel: string;
 }
 
 export interface IStrainState {

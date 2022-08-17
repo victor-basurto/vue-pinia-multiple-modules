@@ -45,7 +45,7 @@ const login = (): boolean => true;
 </script>
 <template>
 	<transition name="modal">
-		<div class="modal-mask" :id="modalId" v-show="showModal">
+		<div class="modal-mask" :id="modalId" v-show="showModal" @click="close">
 			<div class="modal-wrapper">
 				<transition name="modal-container">
 					<div v-show="showModal" class="modal-container inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
@@ -111,11 +111,11 @@ const login = (): boolean => true;
 }
 
 
-.modal-enter-active,
+.modal-enter-activex,
 .modal-leave-active { transition: opacity 0.2s ease-in; }
 .modal-enter-from,
 .modal-leave-to { opacity: 0; }
-.modal-container-enter-active { transition: all 0.3s ease-in .07s; }
+.modal-container-enter-active,
 .modal-container-leave-active { transition: all 0.3s ease-in; }
 .modal-container-enter-from {
 	transform: scale(0.3);

@@ -17,9 +17,6 @@ export const useRootStore = defineStore('rootStore', {
 		setIsMobile(isMobile: boolean): void {
 			this.isMobile = isMobile;
 		},
-		toggleDarkMode(): void {
-			this.darkMode = !this.darkMode;
-		},
 		setVersion(currentVersion: string): void {
 			this.version = currentVersion;
 		}
