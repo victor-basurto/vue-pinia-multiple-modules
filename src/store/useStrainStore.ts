@@ -56,9 +56,10 @@ export const useStrainStore = defineStore('strainStore', {
 			const { setLoading } = loadingStore;
 			setLoading(true);
 			try {
-				let { currentData, status } = await useApi();
+				let { currentData, status, fetchFakeStrains } = await useApi();
 				if (status.value === Status.SUCCESS)
 					this.strains = currentData.value.data as IStrain[]
+				fetchFakeStrains();
 
 			} catch(e) {
 				const typeError = e as TypeError;

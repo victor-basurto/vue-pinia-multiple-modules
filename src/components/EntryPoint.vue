@@ -17,7 +17,7 @@ const strainStore = useStrainStore()
 const loadingStore = useLoadingStore()
 const { getCurrentVersionMsg, isMobile, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
-const { strains } = storeToRefs(strainStore)
+const { strains, allStrainsTotal } = storeToRefs(strainStore)
 const { getStrains, getStrainsFromMocked } = strainStore
 const { isLoading } = storeToRefs(loadingStore)
 
@@ -39,9 +39,13 @@ onMounted(async () => {
 
 <template>
 	<div class="mb-8">
-	<div v-if="isLoading">
-		LOADING.....
-	</div>
+		<div v-if="isLoading">
+			LOADING.....
+		</div>
+		<div v-else>
+			loaded: {{ allStrainsTotal }} strains in total
+
+		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
 			<div v-for="(strain, index) in strains" :key="index"
 				class="max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 bg-white dark:border-gray-700">

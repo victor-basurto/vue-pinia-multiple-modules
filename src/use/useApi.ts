@@ -34,6 +34,19 @@ export default async function useApi(url?: string) {
 		}
 	}
 
+	async function fetchFakeStrains(): Promise<IResponseData<IStrain>> {
+		try {
+			const res = await fetch('./mocked/strains-data.json')
+			const result = await res.json() as IResponseData<IStrain>
+			console.log(result)
+			return result;
+		} catch (err) {
+			const typeError = err as TypeError;
+            status.value = Status.ERROR;
+            throw new Error(typeError.message);
+		}
+	}
+
 	async function refetchData (): Promise<Ref<IResponseData<IStrain>>> {
 		currentData.value = await fetchData() as IResponseData<IStrain>
 		return currentData
@@ -43,6 +56,7 @@ export default async function useApi(url?: string) {
 	return {
 		currentData,
 		status,
-		refetchData
+		refetchData,
+		fetchFakeStrains,
 	}
 }
