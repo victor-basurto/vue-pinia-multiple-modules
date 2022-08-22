@@ -4,6 +4,7 @@ import type { StoreReturnType, StringNumber } from '@/@types/index';
 import { IResponseData } from '@/@types/interfaces/response.interface';
 import { fetchStrains } from '@/services/api';
 import { useLoadingStore } from './useLoadingStore';
+import useApi, {Status} from '@/use/useApi';
 /**
  * @type {id} - strainStore
  * @type {options} - store options
@@ -49,6 +50,24 @@ export const useStrainStore = defineStore('strainStore', {
 			} finally {
 				setLoading(false)
 			}
+		},
+		async getStrainsFromMocked() {
+			const loadingStore = useLoadingStore()
+			const { setLoading } = loadingStore;
+			setLoading(true);
+			try {
+				let { currentData, status } = await useApi();
+				if (status.value === Status.SUCCESS)
+					this.strains = currentData.value.data as IStrain[]
+
+			} catch(e) {
+				const typeError = e as TypeError;
+				this.dataError!.message = typeError.message;
+			} finally {
+				setLoading(false)
+			}
+
+
 
 		}
 	},

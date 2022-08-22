@@ -18,7 +18,7 @@ const loadingStore = useLoadingStore()
 const { getCurrentVersionMsg, isMobile, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
 const { strains } = storeToRefs(strainStore)
-const { getStrains } = strainStore
+const { getStrains, getStrainsFromMocked } = strainStore
 const { isLoading } = storeToRefs(loadingStore)
 
 const { setIsMobile } = rootStore;
@@ -32,7 +32,8 @@ const closingModal = (o: ModalInfoType) => {
 const openModal = () => showModal.value = true
 
 onMounted(async () => {
-	await getStrains()
+	// await getStrains()
+	await getStrainsFromMocked()
 })
 </script>
 
