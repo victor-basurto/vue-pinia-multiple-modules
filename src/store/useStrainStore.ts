@@ -36,40 +36,41 @@ export const useStrainStore = defineStore('strainStore', {
 	},
 	actions: {
 		async getStrains() {
-			const loadingStore = useLoadingStore()
+			const loadingStore = useLoadingStore();
 			const { setLoading } = loadingStore;
 
 			setLoading(true)
 			try {
-				const response: IResponseData<IStrain> = await fetchStrains()
-				this.strains = response.data as IStrain[]
+				const response: IResponseData<IStrain> = await fetchStrains();
+				this.strains = response.data as IStrain[];
 
 			} catch(e) {
 				const typeError = e as TypeError;
 				this.dataError!.message = typeError.message;
 			} finally {
-				setLoading(false)
+				setLoading(false);
 			}
 		},
+		/**
+		 * @description Manually load all the Strains from the HOOK API
+		 * @return {Promise<IStrainState>} Promise resolved with all the Strains
+		 */
 		async getStrainsFromMocked() {
-			const loadingStore = useLoadingStore()
+			const loadingStore = useLoadingStore();
 			const { setLoading } = loadingStore;
 			setLoading(true);
 			try {
 				let { currentData, status, fetchFakeStrains } = await useApi();
 				if (status.value === Status.SUCCESS)
-					this.strains = currentData.value.data as IStrain[]
+					this.strains = currentData.value.data as IStrain[];
 				fetchFakeStrains();
 
 			} catch(e) {
 				const typeError = e as TypeError;
 				this.dataError!.message = typeError.message;
 			} finally {
-				setLoading(false)
+				setLoading(false);
 			}
-
-
-
 		}
 	},
 });
