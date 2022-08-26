@@ -1,13 +1,13 @@
-import strainsMocked from './mocked/strains-data.json';
+import strainsMockedData from './mocked/strains-data.json'
 import type { IStrain } from '@/@types/interfaces/strain.interface';
 import { type IResponseData } from '@/@types/interfaces/response.interface';
 
-const JSON_DATA = strainsMocked as IStrain[];
+const JSON_DATA = strainsMockedData as IStrain[]
 
 const strains: IResponseData<IStrain> = {
 	data: [] as IStrain[],
 	dataErrorStatus: {
-		message: 'Bad Request'
+		message: 'Strains Loaded'
 	}
 }
 /**
@@ -18,22 +18,19 @@ const strains: IResponseData<IStrain> = {
  * @example import { fetchStrains } from '@/services/mocked/index.ts';
  *	import { apiStatusType } from './../@types/interfaces/response.interface';
  *	fetchStrains().then(res => {
- *		console.log(res);
- *	});
+ *	  console.log(res);
+ * });
  */
-const fetch = <T>(payload: IResponseData<T>): Promise<IResponseData<T>> => {
+const fetch = async <T>(payload: IResponseData<T>): Promise<IResponseData<T>> => {
 	return new Promise((resolve, reject) => {
-		if (!strains.data) {
-			reject(strains.dataErrorStatus);
-		}
 		setTimeout(() => {
-			resolve(payload)
+			resolve(payload as IResponseData<T>)
 		}, 1000);
 	})
 }
 
-export const fetchStrains = (): Promise<IResponseData<IStrain>> => {
+export const fetchStrains = async (): Promise<IResponseData<IStrain>> => {
 	Object.assign(strains.data as IStrain[], [] as IStrain[])
 	strains.data = JSON_DATA;
-	return fetch<IStrain>(strains)
+	return await fetch<IStrain>(strains)
 }

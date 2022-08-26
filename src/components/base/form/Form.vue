@@ -15,7 +15,6 @@ const submit = () => {
 </script>
 <template>
 	<div>
-		<!-- create tailwindcss form using firstname, lastname, age -->
 		<form>
 			<div class="flex flex-col my-4">
 				<label for="firstname" class="text-sm">First Name</label>

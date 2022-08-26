@@ -14,7 +14,7 @@
 	"strainFlavors": ["Sweet", "Flowery", "Earthy"],
 	"rollType": "Flower",
 	"rating": 10,
-	"hasCBD": false,
+	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "src/assets/img/w1.webp"
 },
@@ -34,7 +34,7 @@
 	"strainFlavors": ["Sweet", "Vanilla", "Berry"],
 	"rollType": "Flower",
 	"rating": 8,
-	"hasCBD": true,
+	"hasCbd": true,
 	"cbdLevel": "1%",
 	"image": "src/assets/img/w2.jpeg"
 },
@@ -54,7 +54,7 @@
 	"strainFlavors": ["Earthy", "Chemical", "Citrus"],
 	"rollType": "Flower",
 	"rating": 8,
-	"hasCBD": true,
+	"hasCbd": true,
 	"cbdLevel": "1%",
 	"image": "src/assets/img/w3.jpeg"
 },
@@ -74,7 +74,7 @@
 	"strainFlavors": ["Sweet", "Blueberry", "Berry"],
 	"rollType": "Pre-Roll",
 	"rating": 7,
-	"hasCBD": false,
+	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "src/assets/img/w4.png"
 },
@@ -94,7 +94,7 @@
 	"strainFlavors": ["Skunk", "Citrus", "Mango"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"hasCBD": true,
+	"hasCbd": true,
 	"cbdLevel": "1.2%",
 	"image": "src/assets/img/w5.jpeg"
 },
@@ -114,7 +114,9 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"image": "src/assets/img/w6.jpeg"
+	"image": "src/assets/img/w6.jpeg",
+	"hasCbd": true,
+	"cbdLevel": "1.2%"
 },
 {
 	"id": 7,
@@ -132,7 +134,9 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"image": "src/assets/img/w7.jpeg"
+	"image": "src/assets/img/w7.jpeg",
+	"hasCbd": false,
+	"cbdLevel": "0"
 },
 {
 	"id": 8,
@@ -150,7 +154,9 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"image": "src/assets/img/w8.jpeg"
+	"image": "src/assets/img/w8.jpeg",
+	"hasCbd": false,
+	"cbdLevel": ""
 },
 {
 	"id": 9,
@@ -168,5 +174,127 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
-	"image": "src/assets/img/w9.png"
+	"image": "src/assets/img/w9.png",
+	"hasCbd": true,
+	"cbdLevel": "2%"
+},
+{
+	"id": 10,
+	"brand": "Clemens",
+	"name": "Jay",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "1g",
+	"strainType": "Hybrid",
+	"thcLevel": "42%",
+	"strainEffects": ["euphoria", "active", "mindblown"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": false,
+	"cbdLevel": "",
+	"image": "https://picsum.photos/200/300.webp"
+},
+{
+	"id": 11,
+	"brand": "Lemuel",
+	"name": "Botwood",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "28g",
+	"strainType": "Hybrid",
+	"thcLevel": "45%",
+	"strainEffects": ["happy", "arouse", "focus"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": true,
+	"cbdLevel": "1%",
+	"image": "https://source.unsplash.com/1600x900/?portrait"
+},
+{
+	"id": 12,
+	"brand": "Dionne",
+	"name": "Larder",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "28g",
+	"strainType": "Sativa",
+	"thcLevel": "24%",
+	"strainEffects": ["euphoria", "up", "focus"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": false,
+	"cbdLevel": "",
+	"image": "https://loremflickr.com/g/320/240/paris"
+},
+{
+	"id": 13,
+	"brand": "Kerr",
+	"name": "Hambidge",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "1g",
+	"strainType": "Indica",
+	"thcLevel": "24%",
+	"strainEffects": ["cringe", "down", "tabu"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": true,
+	"cbdLevel": "1.1%",
+	"image": "https://loremflickr.com/320/240/brazil,rio"
+},
+{
+	"id": 14,
+	"brand": "Daisie",
+	"name": "Roizin",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "14g",
+	"strainType": "Indica",
+	"thcLevel": "12%",
+	"strainEffects": ["mad", "happy", "sad"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": true,
+	"cbdLevel": "1.2%",
+	"image": "https://loremflickr.com/320/240/dog"
+},
+{
+	"id": 15,
+	"brand": "Dane",
+	"name": "Roscow",
+	"description": {
+		"excerpt": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja",
+		"fullDescription": "lorem ialkfsj alskfj  falksjlfkjaslkdjf aslskf alsklkljafsl kfja sasl;kfja;lk"
+	},
+	"price": "12.22",
+	"strainWeight": "14g",
+	"strainType": "Sativa",
+	"thcLevel": "34%",
+	"strainEffects": ["euphoria", "arouse", "focus"],
+	"strainFlavors": ["cherry", "dirt", "strawberry"],
+	"rollType": "Infuse",
+	"rating": 10,
+	"hasCbd": false,
+	"cbdLevel": "",
+	"image": "https://loremflickr.com/320/240"
 }]

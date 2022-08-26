@@ -58,7 +58,7 @@ export interface IStrain {
 	/**
 	 * true/false - indicates wether has CBD or not
 	 */
-	hasCBD: boolean;
+	hasCbd: boolean;
 	/**
 	 * 1%
 	 */
