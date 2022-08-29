@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRootStore } from '@store/useRootStore'
 import { useModalStore } from '@store/useModalStore'
@@ -18,10 +18,12 @@ const loadingStore = useLoadingStore()
 const { getCurrentVersionMsg, isMobile, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
 const { strains, allStrainsTotal } = storeToRefs(strainStore)
-const { getStrains, getStrainsFromMocked } = strainStore
+const { getStrainsFromMocked } = strainStore
 const { isLoading } = storeToRefs(loadingStore)
 
 const { setIsMobile } = rootStore;
+
+const modalName = ref('')
 
 const closingModal = (o: ModalInfoType) => {
 	console.log('parent handler ', o.modalInfo)
@@ -29,22 +31,23 @@ const closingModal = (o: ModalInfoType) => {
 	showModal.value = false
 }
 
-const openModal = () => showModal.value = true
+const openModal = (name: string) => {
+	modalName.value = name
+	showModal.value = true
+	return showModal.value
+}
 
-onMounted(async () => {
-	// await getStrains()
-	await getStrainsFromMocked()
-})
+onMounted(async () => await getStrainsFromMocked())
 </script>
 
 <template>
 	<div class="mb-8">
 		<div v-if="isLoading">
+			<!-- TODO: create Loading component -->
 			LOADING.....
 		</div>
 		<div v-else>
 			loaded: {{ allStrainsTotal }} strains in total
-
 		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
 			<div v-for="(strain, index) in strains" :key="index"
@@ -68,21 +71,14 @@ onMounted(async () => {
 						</svg>
 					</a>
 					<button class="px-3 py-2 text-white bg-gradient-to-r from-indigo-800 to-purple-800 shadow-lg rounded text-sm ml-3"
-						id="open-modal" @click="openModal">
+						id="open-modal" @click="openModal(strain.name)">
 						open modal
 					</button>
-					<Modal modalId="generic-modal" headerInfo="Strains Rating Form" :showModal="showModal" @close="closingModal">
-						<template #header>
-							<div class="text-center"><small>Contact US</small></div>
-						</template>
-						<template #body>
-							<Form />
-						</template>
-					</Modal>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<div>
 		{{ getCurrentVersionMsg }} <br>
 		<span>Is Mobile?: <strong>{{ (isMobile).toString().toUpperCase() }}</strong></span> <br>
@@ -90,28 +86,22 @@ onMounted(async () => {
 		<span>Is Dark Mode enabled?: {{ darkMode }}</span> <br>
 		<span>Current Color Scheme Type: {{ colorScheme }}</span>
 	</div>
-	<p>
-		Recommended IDE setup:
-		<a class="text-green-500" href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-		+
-		<a class="text-green-500" href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-	</p>
-
+	<p>Recommended IDE setup: <a class="text-green-500" href="https://code.visualstudio.com/" target="_blank">VSCode</a> + <a class="text-green-500" href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a></p>
 	<p>See <code>README.md</code> for more information.</p>
-
-	<p>
-		<a class="text-green-500" href="https://vitejs.dev/guide/features.html" target="_blank">
-			Vite Docs
-		</a>
-		|
-		<a class="text-green-500" href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-	</p>
+	<p><a class="text-green-500" href="https://vitejs.dev/guide/features.html" target="_blank">Vite Docs</a> | <a class="text-green-500" href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a></p>
 
 	<button type="button" @click="setIsMobile(true)">is mobile</button>
-	<p>
-		Edit
-		<code>components/HelloWorld.vue</code> to test hot module replacement.
-	</p>
+
+	<p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
+
+	<Modal modalId="generic-modal" headerInfo="Strains Rating Form" :showModal="showModal" @close="closingModal">
+		<template #header>
+			<div class="text-center"><small>{{ modalName }}</small></div>
+		</template>
+		<template #body>
+			<Form />
+		</template>
+	</Modal>
 </template>
 
 <style scoped>
