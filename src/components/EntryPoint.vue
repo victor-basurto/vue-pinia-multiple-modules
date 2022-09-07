@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { defineAsyncComponent, onMounted, ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRootStore } from '@store/useRootStore'
 import { useModalStore } from '@store/useModalStore'
@@ -9,7 +9,10 @@ import Form from '@components/base/form/Form.vue'
 import { useStrainStore } from '@/store/useStrainStore'
 import { useLoadingStore } from '@/store/useLoadingStore'
 
+
 defineProps<{ msg: string }>();
+
+const Button = defineAsyncComponent(() => import('@components/base/Button.vue'))
 
 const rootStore = useRootStore()
 const modalStore = useModalStore()
@@ -70,10 +73,10 @@ onMounted(async () => await getStrainsFromMocked())
 								clip-rule="evenodd"></path>
 						</svg>
 					</a>
-					<button class="px-3 py-2 text-white bg-gradient-to-r from-indigo-800 to-purple-800 shadow-lg rounded text-sm ml-3"
+					<Button btnType="button" className="text-white bg-gradient-to-r from-indigo-800 to-purple-800"
 						id="open-modal" @click="openModal(strain.name)">
 						open modal
-					</button>
+					</Button>
 				</div>
 			</div>
 		</div>
