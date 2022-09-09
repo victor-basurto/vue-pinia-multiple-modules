@@ -73,10 +73,7 @@ onMounted(async () => await getStrainsFromMocked())
 								clip-rule="evenodd"></path>
 						</svg>
 					</a>
-					<Button btnType="button" className="text-white bg-gradient-to-r from-indigo-800 to-purple-800"
-						id="open-modal" @click="openModal(strain.name)">
-						open modal
-					</Button>
+					<Button btnType="button" id="open-modal" @click="openModal(strain.name)">open modal</Button>
 				</div>
 			</div>
 		</div>
