@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, toRefs, computed } from 'vue';
+import { toRefs, computed } from 'vue';
 type BtnType = "button" | "submit" | "reset" | undefined
 type BtnColorType = "primary" | "secondary" | "danger" | "plain" | undefined
 

@@ -12,6 +12,7 @@ import { useLoadingStore } from '@/store/useLoadingStore'
 
 defineProps<{ msg: string }>();
 
+const StrainCard = defineAsyncComponent(() => import('@components/strain/StrainCard.vue'))
 const Button = defineAsyncComponent(() => import('@components/base/Button.vue'))
 
 const rootStore = useRootStore()
@@ -34,11 +35,19 @@ const closingModal = (o: ModalInfoType) => {
 	showModal.value = false
 }
 
-const openModal = (name: string) => {
-	modalName.value = name
-	showModal.value = true
-	return showModal.value
-}
+type OpenModal = {modalName: string}
+const openModal = (o: OpenModal) => {
+	console.log('parent')
+	// modalName.value = o.modalName;
+	// showModal.value = true;
+	// return showModal.value;
+};
+
+// const openModal = (name: string) => {
+// 	modalName.value = name
+// 	showModal.value = true
+// 	return showModal.value
+// }
 
 onMounted(async () => await getStrainsFromMocked())
 </script>
@@ -53,29 +62,11 @@ onMounted(async () => await getStrainsFromMocked())
 			loaded: {{ allStrainsTotal }} strains in total
 		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
-			<div v-for="(strain, index) in strains" :key="index"
-				class="max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 bg-white dark:border-gray-700">
-				<a href="#">
-					<img class="rounded-t-lg" :src="strain.image" alt="" />
-				</a>
-				<div class="p-5">
-					<a href="#">
-						<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ strain.name }}</h5>
-					</a>
-					<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ strain.description.excerpt }}</p>
-					<a href="#"
-						class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-						Read more
-						<svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
-							xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd"
-								d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-								clip-rule="evenodd"></path>
-						</svg>
-					</a>
-					<Button btnType="button" id="open-modal" @click="openModal(strain.name)">open modal</Button>
-				</div>
-			</div>
+			<StrainCard
+				v-for="(strain, index) in strains"
+				:index="index"
+				:strain="strain"
+			/>
 		</div>
 	</div>
 
@@ -94,7 +85,13 @@ onMounted(async () => await getStrainsFromMocked())
 
 	<p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 
-	<Modal modalId="generic-modal" headerInfo="Strains Rating Form" :showModal="showModal" @close="closingModal">
+	<Modal
+		modalId="generic-modal"
+		headerInfo="Strains Rating Form"
+		:showModal="showModal"
+		@close="closingModal"
+		@open="openModal"
+		>
 		<template #header>
 			<div class="text-center"><small>{{ modalName }}</small></div>
 		</template>
