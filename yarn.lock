@@ -55,6 +55,11 @@
   "resolved" "https://registry.npmjs.org/@emmetio/scanner/-/scanner-1.0.0.tgz"
   "version" "1.0.0"
 
+"@heroicons/vue@^2.0.10":
+  "integrity" "sha512-K32WvSqsuWQrxqAAGCaTELW6VCOgg7OeVP+VBwCMbyeflnguJlCfHNlJ+0z4aPpgJCWB2RESRy3x59t+2byKSg=="
+  "resolved" "https://registry.npmjs.org/@heroicons/vue/-/vue-2.0.10.tgz"
+  "version" "2.0.10"
+
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
   "resolved" "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -1825,7 +1830,7 @@
   dependencies:
     "vscode-vue-languageservice" "^0.27.0"
 
-"vue@^2.6.14 || ^3.2.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.16", "vue@3.2.20":
+"vue@^2.6.14 || ^3.2.0", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.16", "vue@>= 3", "vue@3.2.20":
   "integrity" "sha512-81JjEP4OGk9oO8+CU0h2nFPGgJBm9mNa3kdCX2k6FuRdrWrC+CNe+tOnuIeTg8EWwQuI+wwdra5Q7vSzp7p4Iw=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.20.tgz"
   "version" "3.2.20"

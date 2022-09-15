@@ -14,6 +14,7 @@
 	"strainFlavors": ["Sweet", "Flowery", "Earthy"],
 	"rollType": "Flower",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://images.weedmaps.com/products/000/105/320/avatar/original/1642458251-1642204126-indica-wdc-35g.jpg?fit=fill&fill=solid&fill-color=ffffff&h=400&w=400&auto=format"
@@ -34,6 +35,7 @@
 	"strainFlavors": ["Sweet", "Vanilla", "Berry"],
 	"rollType": "Flower",
 	"rating": 8,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1%",
 	"image": "https://images.weedmaps.com/products/000/105/320/avatar/original/1642458251-1642204126-indica-wdc-35g.jpg?fit=fill&fill=solid&fill-color=ffffff&h=400&w=400&auto=format"
@@ -54,6 +56,7 @@
 	"strainFlavors": ["Earthy", "Chemical", "Citrus"],
 	"rollType": "Flower",
 	"rating": 8,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1%",
 	"image": "https://media1.fdncms.com/inlander/imager/u/original/20805127/greenzone1-1-2a583dd676d4bb30.jpg"
@@ -74,6 +77,7 @@
 	"strainFlavors": ["Sweet", "Blueberry", "Berry"],
 	"rollType": "Pre-Roll",
 	"rating": 7,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://images.weedmaps.com/photos/products/000/175/621/original/904457_Baby-Blue-Zkittlez.jpg?fit=fill&fill=solid&fill-color=ffffff&h=768&w=768&auto=format"
@@ -94,6 +98,7 @@
 	"strainFlavors": ["Skunk", "Citrus", "Mango"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1.2%",
 	"image": "https://images.weedmaps.com/products/000/399/724/avatar/original/1657861394-green_crack.jpg?fit=fill&fill=solid&fill-color=ffffff&h=768&w=768&auto=format"
@@ -114,6 +119,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1.2%",
 	"image": "https://picsum.photos/200/300/?blur"
@@ -134,6 +140,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "0",
 	"image": "https://picsum.photos/200/300/?blur=2"
@@ -154,6 +161,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://picsum.photos/id/870/200/300?grayscale&blur=2"
@@ -174,6 +182,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "2%",
 	"image": "https://picsum.photos/200/300.jpg"
@@ -194,6 +203,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://picsum.photos/200/300.webp"
@@ -214,6 +224,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1%",
 	"image": "https://source.unsplash.com/1600x900/?portrait"
@@ -234,6 +245,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://loremflickr.com/g/320/240/paris"
@@ -254,6 +266,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1.1%",
 	"image": "https://loremflickr.com/320/240/brazil,rio"
@@ -274,6 +287,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": true,
 	"cbdLevel": "1.2%",
 	"image": "https://loremflickr.com/320/240/dog"
@@ -294,6 +308,7 @@
 	"strainFlavors": ["cherry", "dirt", "strawberry"],
 	"rollType": "Infuse",
 	"rating": 10,
+	"favs": false,
 	"hasCbd": false,
 	"cbdLevel": "",
 	"image": "https://loremflickr.com/320/240"

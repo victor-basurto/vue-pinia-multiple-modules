@@ -56,6 +56,10 @@ export interface IStrain {
 	 */
 	rating: number;
 	/**
+	 * true
+	 */
+	favs: boolean;
+	/**
 	 * true/false - indicates wether has CBD or not
 	 */
 	hasCbd: boolean;
@@ -70,6 +74,7 @@ export interface IStrainState {
 	currentStrain: IStrain;
 	index: number;
 	fetching: boolean;
+	isFavStrain: boolean;
 	dataError: Partial<TypeError> | null;
 }
 
@@ -77,6 +82,7 @@ export const state: IStrainState = {
 	strains: [] as IStrain[],
 	index: -1,
 	currentStrain: {} as IStrain,
+	isFavStrain: false,
 	fetching: false,
 	dataError: {
 		message: 'Bad Request'

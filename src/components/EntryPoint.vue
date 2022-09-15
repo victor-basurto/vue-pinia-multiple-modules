@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useRootStore } from '@store/useRootStore'
 import { useModalStore } from '@store/useModalStore'
@@ -8,6 +8,8 @@ import Modal from '@components/base/modal/Modal.vue'
 import Form from '@components/base/form/Form.vue'
 import { useStrainStore } from '@/store/useStrainStore'
 import { useLoadingStore } from '@/store/useLoadingStore'
+import { StarIcon } from '@heroicons/vue/24/outline'
+import { IStrain } from '@/@types/interfaces/strain.interface'
 
 defineProps<{ msg: string }>();
 
@@ -17,13 +19,14 @@ const strainStore = useStrainStore()
 const loadingStore = useLoadingStore()
 const { getCurrentVersionMsg, isMobile, darkMode, colorScheme } =  storeToRefs(rootStore)
 const { showModal, editModalById, showCreateModal } = storeToRefs(modalStore)
-const { strains, allStrainsTotal } = storeToRefs(strainStore)
-const { getStrainsFromMocked } = strainStore
+const { strains, allStrainsTotal, isFavStrain, starredStrains } = storeToRefs(strainStore)
+const { getStrainsFromMocked, starredStrain } = strainStore
 const { isLoading } = storeToRefs(loadingStore)
 
 const { setIsMobile } = rootStore;
 
 const modalName = ref('')
+const favs = ref<IStrain[]>([])
 
 const closingModal = (o: ModalInfoType) => {
 	console.log('parent handler ', o.modalInfo)
@@ -32,9 +35,13 @@ const closingModal = (o: ModalInfoType) => {
 }
 
 const openModal = (name: string) => {
-	modalName.value = name
-	showModal.value = true
-	return showModal.value
+	modalName.value = name;
+	showModal.value = true;
+	return showModal.value;
+}
+const getAllStarred = () => {
+	console.log(starredStrains)
+	return starredStrains
 }
 
 onMounted(async () => await getStrainsFromMocked())
@@ -49,9 +56,15 @@ onMounted(async () => await getStrainsFromMocked())
 		<div v-else>
 			loaded: {{ allStrainsTotal }} strains in total
 		</div>
+		<button @click="getAllStarred">
+			all favs
+		</button>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4">
 			<div v-for="(strain, index) in strains" :key="index"
-				class="max-w-sm rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 bg-white dark:border-gray-700">
+				class="max-w-sm relative rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 bg-white dark:border-gray-700">
+				<div class="fav-container w-6 absolute right-0" @click="starredStrain(strain.id)">
+					<StarIcon class="text-yellow-400" :class="strain.favs ? 'starred' : ''"></StarIcon>
+				</div>
 				<a href="#">
 					<img class="rounded-t-lg" :src="strain.image" alt="" />
 				</a>
@@ -113,6 +126,9 @@ label {
   margin: 0 0.5em;
   font-weight: bold;
 }
+.starred {
+	fill: yellow;
+}
 
 code {
   background-color: #eee;
@@ -130,13 +146,8 @@ code {
  */
 
 .modal-enter-active,
-.modal-leave-active {
-  transition: opacity 1s ease;
-}
+.modal-leave-active { transition: opacity 1s ease; }
 
 .modal-enter-from,
-.modal-leave-to {
-  opacity: 0;
-
-}
+.modal-leave-to { opacity: 0;}
 </style>
